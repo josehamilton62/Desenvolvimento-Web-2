@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desenvolvimento Web 2 - Unidade 1</title>
+  </head>
+  <body>
+    <h2>Unidade 1 - Tarefa 1 (JavaScript)</h2>
+    <p>Visualize os resultados no Console do Desenvolvedor (F12).</p>
+
+    <script>
+      // 1. Avaliação de Risco de Crédito
+      function avaliarRiscoDeCredito(rendaMensal, dividaAtual) {
+        const renda = parseFloat(rendaMensal);
+        const divida = parseFloat(dividaAtual);
+        const TE = (divida / renda) * 100;
+
+        if (TE < 10) {
+          return "Risco Baixo";
+        } else if (TE >= 10 && TE < 30) {
+          return "Risco Moderado";
+        } else {
+          return "Risco Alto";
+        }
+      }
+
+      const valorRenda = prompt("Informe a renda mensal:");
+      const valorDivida = prompt("Informe a dívida atual:");
+      const classificacao = avaliarRiscoDeCredito(valorRenda, valorDivida);
+      console.log(`Classificação de risco de crédito: ${classificacao}`);
+
+      // 2. Manipulação de array com métodos de array
+      const numeros = [];
+      while (true) {
+        const entrada = prompt(
+          "Digite um número para adicionar ao array (ou Cancelar / vazio para encerrar):",
+        );
+        if (entrada === null || entrada.trim() === "") {
+          if (numeros.length > 0) break;
+          alert("Digite pelo menos um número.");
+          continue;
+        }
+        const n = parseFloat(entrada);
+        if (!isNaN(n)) {
+          numeros.push(n);
+        }
+      }
+
+      console.log(`Maior valor: ${Math.max(...numeros)}`);
+      console.log(`Menor valor: ${Math.min(...numeros)}`);
+
+      const dobro = numeros.map((n) => n * 2);
+      console.log("Array dobro:", dobro);
+
+      const maioresQueCinco = numeros.filter((n) => n > 5);
+      console.log("Maiores que 5:", maioresQueCinco);
+
+      // 3. Criação e manipulação de objeto (sem classe)
+      const carro = {
+        marca: "Toyota",
+        modelo: "Corolla",
+        ano: 2022,
+        exibirInfo: function () {
+          console.log(
+            `Marca: ${this.marca} | Modelo: ${this.modelo} | Ano: ${this.ano}`,
+          );
+        },
+      };
+
+      carro.exibirInfo();
+      carro.cor = "Preto";
+      carro.ano = 2025;
+      console.log(carro);
+
+      // 4. Orientação a Objetos (com classe e instância)
+      class Livro {
+        constructor(titulo, autor, ano) {
+          this.titulo = titulo;
+          this.autor = autor;
+          this.ano = ano;
+        }
+
+        detalhes() {
+          console.log(
+            `Livro: ${this.titulo} | Autor: ${this.autor} | Ano: ${this.ano}`,
+          );
+        }
+      }
+
+      const primeiroLivro = new Livro(
+        "Use a Cabeça! JavaScript",
+        "Michael Morrison",
+        2008,
+      );
+      const segundoLivro = new Livro("Aprendendo Node", "Shelley Powers", 2016);
+
+      primeiroLivro.detalhes();
+      segundoLivro.detalhes();
+
+      // 5. Laços, condicionais e manipulação de string
+      const palavra = prompt("Informe uma palavra:") || "";
+      console.log(`Quantidade de caracteres: ${palavra.length}`);
+
+      const limpa = palavra.trim().toLowerCase();
+      const invertida = limpa.split("").reverse().join("");
+
+      if (limpa === invertida && limpa.length > 0) {
+        console.log(`A palavra "${palavra}" é um palíndromo.`);
+      } else {
+        console.log(`A palavra "${palavra}" não é um palíndromo.`);
+      }
+    </script>
+  </body>
+</html>
