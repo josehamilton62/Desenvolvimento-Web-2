@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo Rick and Morty - API Pública</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="cabecalho">
+        <h1>Catálogo de Personagens: Rick and Morty</h1>
+        <p class="descricao-topo">
+          Consulta assíncrona à Rick and Morty API utilizando fetch, async/await
+          e manipulação segura do DOM.
+        </p>
+      </header>
+
+      <section class="controles">
+        <form id="formPersonagem" class="form-busca" novalidate>
+          <div class="bloco-input">
+            <label for="inputIdPersonagem"
+              >Buscar personagem por ID (1 a 826)</label
+            >
+            <div class="linha-acoes">
+              <input
+                type="number"
+                id="inputIdPersonagem"
+                placeholder="Ex.: 1 (Rick), 2 (Morty)..."
+                min="1"
+              />
+              <button type="submit" class="btn-primario">Buscar ID</button>
+              <button type="button" id="btnListarTodos" class="btn-secundario">
+                Ver Galeria (20 personagens)
+              </button>
+              <button type="button" id="btnSortear" class="btn-secundario">
+                Sortear Personagem
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <p id="statusMensagem" class="status-mensagem" role="status"></p>
+
+      <section id="gradePersonagens" class="grade-personagens"></section>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

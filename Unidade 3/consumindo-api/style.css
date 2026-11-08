@@ -1,0 +1,201 @@
+:root {
+  --bg-principal: #0d1117;
+  --bg-cartao: #161b22;
+  --cor-borda: #30363d;
+  --texto-claro: #e6edf3;
+  --texto-secundario: #8b949e;
+  --azul-acao: #2f81f7;
+  --azul-hover: #388bfd;
+  --vermelho-erro: #f85149;
+  --verde-vivo: #3fb950;
+  --cinza-desconhecido: #8b949e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 28px 16px;
+  background-color: var(--bg-principal);
+  color: var(--texto-claro);
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  line-height: 1.5;
+}
+
+.app {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.cabecalho {
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 0 0 6px;
+  font-size: 1.8rem;
+}
+
+.descricao-topo {
+  margin: 0;
+  color: var(--texto-secundario);
+}
+
+.controles {
+  background-color: var(--bg-cartao);
+  border: 1px solid var(--cor-borda);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+
+.bloco-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  font-size: 0.9rem;
+  color: var(--texto-secundario);
+}
+
+.linha-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  min-width: 200px;
+  height: 42px;
+  padding: 8px 12px;
+  background-color: var(--bg-principal);
+  color: var(--texto-claro);
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+input:focus {
+  outline: 2px solid var(--azul-acao);
+}
+
+button {
+  height: 42px;
+  padding: 0 16px;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primario {
+  background-color: var(--azul-acao);
+  color: #ffffff;
+  border: none;
+}
+
+.btn-primario:hover {
+  background-color: var(--azul-hover);
+}
+
+.btn-secundario {
+  background-color: transparent;
+  color: var(--texto-claro);
+  border: 1px solid var(--cor-borda);
+}
+
+.btn-secundario:hover {
+  border-color: var(--azul-acao);
+}
+
+.status-mensagem {
+  min-height: 28px;
+  margin: 0 0 16px;
+  color: var(--texto-secundario);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.status-mensagem.erro {
+  color: var(--vermelho-erro);
+}
+
+.grade-personagens {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.cartao-personagem {
+  background-color: var(--bg-cartao);
+  border: 1px solid var(--cor-borda);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cartao-personagem img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  background-color: var(--cor-borda);
+}
+
+.corpo-cartao {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nome-personagem {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.badge-status {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.status-alive {
+  background-color: rgba(63, 185, 80, 0.18);
+  color: var(--verde-vivo);
+}
+
+.status-dead {
+  background-color: rgba(248, 81, 73, 0.18);
+  color: var(--vermelho-erro);
+}
+
+.status-unknown {
+  background-color: rgba(139, 148, 158, 0.2);
+  color: var(--cinza-desconhecido);
+}
+
+.linha-dado {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--texto-secundario);
+}
+
+.linha-dado strong {
+  color: var(--texto-claro);
+}
