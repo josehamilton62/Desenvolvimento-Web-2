@@ -1,0 +1,74 @@
+:root {
+  --fundo: #0f0f1a;
+  --cartao: #17172b;
+  --borda: #2a2a45;
+  --texto: #e6e6f0;
+  --texto-suave: #9a9ab5;
+  --destaque: #4455cc;
+  --erro: #ff6b81;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 32px 16px;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 1.8rem;
+}
+
+.intro {
+  margin: 0 0 20px;
+  color: var(--texto-suave);
+}
+
+.mensagem {
+  min-height: 1.5em;
+  margin: 0 0 16px;
+  color: var(--texto-suave);
+}
+
+.mensagem.erro {
+  color: var(--erro);
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.cartao {
+  margin: 0;
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.cartao img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--borda);
+}
+
+.cartao figcaption {
+  padding: 10px 12px;
+  font-size: 0.9rem;
+}
